@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install \
 	php-mcrypt \
 	php7.0-curl \
 	php7.0-gd \	
-	php7.0-xml  -y 
+	php7.0-xml -y --no-install-recommends
 
 RUN mkdir /data
 
