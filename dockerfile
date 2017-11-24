@@ -16,9 +16,10 @@ RUN apt-get update && apt-get install \
 RUN mkdir /data
 
 VOLUME /var/www
-VOLUME /data
+VOLUME /var/lib/mysql_data
 
 EXPOSE 80
 COPY entrypoint.sh /entrypoint.sh
 COPY files/000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY files/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 ENTRYPOINT /entrypoint.sh

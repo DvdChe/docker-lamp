@@ -2,18 +2,17 @@
 
 usermod www-data -s /bin/bash
 
-sleep 1
 
-if [ ! -f /var/www/html/.flag ]; then
+if [ ! -f /var/lib/mysql_data/.flag ]; then
+	chown -R www-data: /var/www
+	cp -Rv /var/lib/mysql/* /var/lib/mysql_data
+	chown -R mysql: /var/lib/mysql_data/
+	touch /var/lib/mysql_data/.flag
+fi
 
-    rm -rf /var/www/html
-    chown -R www-data: /var/www
-    su -c 'cd /var/www/html && php install.php' - www-data
-    
-    touch /var/www/html/.flag
-fi 
 
 a2enmod rewrite
+/etc/init.d/mysql start
 /etc/init.d/apache2 start
 
 

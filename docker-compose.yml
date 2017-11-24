@@ -2,12 +2,13 @@ version: '2'
 
 services:
     lampp:
-        image: dvdche/lampp
+        image: dch/lampp
         container_name: lampp
         network_mode: bridge
         volumes: 
             - ./www:/var/www/
-            - ./data:/data/
+            - ./data:/var/lib/mysql_data/
+        hostname: lampp
         ports: 
             - 8080:80
         tty: true
