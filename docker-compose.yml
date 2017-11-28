@@ -9,6 +9,10 @@ services:
             - ./www:/var/www/
             - ./data:/var/lib/mysql_data/
         hostname: lampp
+        environment:
+            - DB_NAME=test
+            - DB_USER=user
+            - DB_PASS=toto
         ports: 
             - 8080:80
         tty: true
