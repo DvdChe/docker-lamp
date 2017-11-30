@@ -15,8 +15,6 @@ RUN apt-get update && apt-get install \
 
 RUN mkdir /data
 
-
-
 VOLUME /var/www
 VOLUME /var/lib/mysql_data
 
