@@ -2,6 +2,9 @@ version: '2'
 
 services:
     lampp:
+        build:
+            context: .
+            dockerfile: dockerfile
         image: dch/lampp
         container_name: lampp
         network_mode: bridge
