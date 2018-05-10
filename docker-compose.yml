@@ -16,6 +16,8 @@ services:
             - DB_NAME=test
             - DB_USER=user
             - DB_PASS=toto
+            - FQDN=localhost
+            - APACHE_LOG_DIR=/var/log
         ports: 
             - 8080:80
         tty: true
